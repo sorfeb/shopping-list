@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<div class="heading">
     <h1>Shopping List Page</h1>
 
     <h5>Name:</h5>
@@ -8,7 +10,9 @@
 
     <h5>Class:</h5>
     <p>{{class}}</p>
+</div>
 
+<div id = "main">
     <table>
         <tr>
             <th>Name</th>
@@ -25,11 +29,20 @@
                 <td>{{product.price}}</td>
                 <td>{{product.description}}</td>
                 <td>{{product.date_added}}</td>
+                <td>
+                    <a href="{% url 'main:edit_product' product.pk %}">
+                        <button>
+                            Edit
+                        </button>
+                    </a>
+                </td>
             </tr>
         {% endfor %}
     </table>
 
     <br />
+</div>
+
 
 <h5>Sesi terakhir login: {{ last_login }}</h5>
 
