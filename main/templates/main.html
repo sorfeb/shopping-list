@@ -95,6 +95,7 @@
     </a>
 
 <script>
+    
     async function getProducts() {
         return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
     }
@@ -131,7 +132,8 @@
         document.getElementById("form").reset()
         return false
     }
-    
+
+    document.getElementById("button_add").onclick = addProduct
 </script>
 {% endblock content %}
 
